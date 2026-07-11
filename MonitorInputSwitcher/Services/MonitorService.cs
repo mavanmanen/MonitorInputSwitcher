@@ -4,11 +4,22 @@ namespace MonitorInputSwitcher.Services;
 
 public abstract class MonitorService
 {
-    public abstract string? GetCurrentInput();
+    public abstract string? GetCurrentInput(string monitor);
     
-    public abstract bool ChangeInput(string value);
+    public abstract bool ChangeInput(string monitor, string value);
+
+    public string? GetHostname()
+    {
+        var (output, error) = RunCommand("hostname");
+        if (error.Length > 0)
+        {
+            return null;
+        }
+
+        return output.Trim();
+    }
     
-    protected static (string output, string error) RunCommand(string command, string arguments)
+    protected static (string output, string error) RunCommand(string command, string arguments = "")
     {
         var processStartInfo = new ProcessStartInfo
         {

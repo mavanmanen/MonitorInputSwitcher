@@ -1,1 +1,9 @@
-15,16
+[Desktop]
+Hostname=PC-MITCHELL
+Monitor=2
+Value=15
+
+[Laptop]
+Hostname=popo-os
+Monitor=1
+Value=16

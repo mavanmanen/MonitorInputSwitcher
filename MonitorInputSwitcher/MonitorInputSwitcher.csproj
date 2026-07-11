@@ -27,4 +27,10 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('-windows')) Or '$(OS)' == 'Windows_NT'">
+        <None Include="winddcutil.exe">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>
