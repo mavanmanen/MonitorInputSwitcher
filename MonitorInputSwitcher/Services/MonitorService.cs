@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 
 namespace MonitorInputSwitcher.Services;
@@ -25,6 +26,7 @@ public abstract class MonitorService
         {
             FileName = command,
             Arguments = arguments,
+            WorkingDirectory = Environment.CurrentDirectory,
             CreateNoWindow = true,
             UseShellExecute = false,
             RedirectStandardError = true,

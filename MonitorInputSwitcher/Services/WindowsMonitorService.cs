@@ -6,7 +6,7 @@ public partial class WindowsMonitorService : MonitorService
 {
     public override string? GetCurrentInput(string monitor)
     {
-        var (output, error) = RunCommand("\\windccutil.exe", $"getvcp {monitor} 0x60");
+        var (output, error) = RunCommand("winddcutil.exe", $"getvcp {monitor} 0x60");
         if (error.Length > 1)
         {
             return null;
@@ -24,7 +24,7 @@ public partial class WindowsMonitorService : MonitorService
 
     public override bool ChangeInput(string monitor, string value)
     {
-        var (_, error) = RunCommand(".\\winddcutil.exe", $"setvcp {monitor} 0x60 {value}");
+        var (_, error) = RunCommand("winddcutil.exe", $"setvcp {monitor} 0x60 {value}");
         return error.Length == 0;
     }
 
