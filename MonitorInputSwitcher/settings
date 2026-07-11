@@ -4,6 +4,6 @@ Monitor=2
 Value=15
 
 [Laptop]
-Hostname=popo-os
+Hostname=pop-os
 Monitor=1
 Value=16
