@@ -27,6 +27,6 @@ public partial record Settings(string DesktopHostname, string DesktopMonitor, st
         return new Settings(desktopHostname, desktopMonitor, desktopValue, laptopHostname, laptopMonitor, laptopValue);
     }
 
-    [GeneratedRegex(@"\[\w+\]\r?\nHostname=(?<hostname>.+)\r?\nMonitor=(?<monitor>\d+)\r?\nValue=(?<value>\d+)", RegexOptions.Compiled)]
+    [GeneratedRegex(@"\[\w+\]\r?\nHostname=(?<hostname>.+)\r?\nMonitor=(?<monitor>\d+)\r?\nValue=(?<value>\d+)")]
     private static partial Regex SettingsRegex();
 }
